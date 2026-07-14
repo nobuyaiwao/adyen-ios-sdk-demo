@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+
+# Python
+server/.venv/
+server/.env
+server/__pycache__/
+**/__pycache__/
+*.pyc
+
+# Xcode
+DerivedData/
+.build/
+
+# User-specific Xcode settings
+*.xcuserstate
+xcuserdata/
+
+# Local configuration
+AdyenDemo/Secrets.xcconfig
+
+# Optional
+.env
