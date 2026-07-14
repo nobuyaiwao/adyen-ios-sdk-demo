@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43D394823005E93F001E3739 /* Adyen in Frameworks */ = {isa = PBXBuildFile; productRef = 43D394813005E93F001E3739 /* Adyen */; };
+		43D394843005E93F001E3739 /* AdyenActions in Frameworks */ = {isa = PBXBuildFile; productRef = 43D394833005E93F001E3739 /* AdyenActions */; };
+		43D394863005E93F001E3739 /* AdyenCard in Frameworks */ = {isa = PBXBuildFile; productRef = 43D394853005E93F001E3739 /* AdyenCard */; };
+		43D394883005E93F001E3739 /* AdyenDropIn in Frameworks */ = {isa = PBXBuildFile; productRef = 43D394873005E93F001E3739 /* AdyenDropIn */; };
+		43D3948A3005ED5F001E3739 /* AdyenSession in Frameworks */ = {isa = PBXBuildFile; productRef = 43D394893005ED5F001E3739 /* AdyenSession */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		43D394723005BC0C001E3739 /* AdyenDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdyenDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		43D39494300624ED001E3739 /* Exceptions for "AdyenDemo" folder in "AdyenDemo" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Config/Base.xcconfig,
+				Config/Debug.xcconfig,
+				Config/Release.xcconfig,
+				Config/Secrets.xcconfig,
+				Config/Secrets.xcconfig.example,
+				Info.plist,
+				Secrets.xcconfig,
+				Secrets.xcconfig.example,
+			);
+			target = 43D394713005BC0C001E3739 /* AdyenDemo */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		43D394743005BC0C001E3739 /* AdyenDemo */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				43D39494300624ED001E3739 /* Exceptions for "AdyenDemo" folder in "AdyenDemo" target */,
+			);
+			path = AdyenDemo;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43D3946F3005BC0C001E3739 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43D394883005E93F001E3739 /* AdyenDropIn in Frameworks */,
+				43D394863005E93F001E3739 /* AdyenCard in Frameworks */,
+				43D394843005E93F001E3739 /* AdyenActions in Frameworks */,
+				43D3948A3005ED5F001E3739 /* AdyenSession in Frameworks */,
+				43D394823005E93F001E3739 /* Adyen in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43D394693005BC0C001E3739 = {
+			isa = PBXGroup;
+			children = (
+				43D394743005BC0C001E3739 /* AdyenDemo */,
+				43D394733005BC0C001E3739 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		43D394733005BC0C001E3739 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43D394723005BC0C001E3739 /* AdyenDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		43D394713005BC0C001E3739 /* AdyenDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43D3947D3005BC0D001E3739 /* Build configuration list for PBXNativeTarget "AdyenDemo" */;
+			buildPhases = (
+				43D3946E3005BC0C001E3739 /* Sources */,
+				43D3946F3005BC0C001E3739 /* Frameworks */,
+				43D394703005BC0C001E3739 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				43D394743005BC0C001E3739 /* AdyenDemo */,
+			);
+			name = AdyenDemo;
+			packageProductDependencies = (
+				43D394813005E93F001E3739 /* Adyen */,
+				43D394833005E93F001E3739 /* AdyenActions */,
+				43D394853005E93F001E3739 /* AdyenCard */,
+				43D394873005E93F001E3739 /* AdyenDropIn */,
+				43D394893005ED5F001E3739 /* AdyenSession */,
+			);
+			productName = AdyenDemo;
+			productReference = 43D394723005BC0C001E3739 /* AdyenDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		43D3946A3005BC0C001E3739 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2610;
+				LastUpgradeCheck = 2610;
+				TargetAttributes = {
+					43D394713005BC0C001E3739 = {
+						CreatedOnToolsVersion = 26.1;
+					};
+				};
+			};
+			buildConfigurationList = 43D3946D3005BC0C001E3739 /* Build configuration list for PBXProject "AdyenDemo" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 43D394693005BC0C001E3739;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				43D394803005E93F001E3739 /* XCRemoteSwiftPackageReference "adyen-ios" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 43D394733005BC0C001E3739 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				43D394713005BC0C001E3739 /* AdyenDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		43D394703005BC0C001E3739 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43D3946E3005BC0C001E3739 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		43D3947B3005BC0D001E3739 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 43D394743005BC0C001E3739 /* AdyenDemo */;
+			baseConfigurationReferenceRelativePath = Config/Debug.xcconfig;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		43D3947C3005BC0D001E3739 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 43D394743005BC0C001E3739 /* AdyenDemo */;
+			baseConfigurationReferenceRelativePath = Config/Release.xcconfig;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		43D3947E3005BC0D001E3739 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AdyenDemo/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Save payment vouchers to your photo library.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nobuya.AdyenDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		43D3947F3005BC0D001E3739 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AdyenDemo/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Save payment vouchers to your photo library.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nobuya.AdyenDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		43D3946D3005BC0C001E3739 /* Build configuration list for PBXProject "AdyenDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43D3947B3005BC0D001E3739 /* Debug */,
+				43D3947C3005BC0D001E3739 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43D3947D3005BC0D001E3739 /* Build configuration list for PBXNativeTarget "AdyenDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43D3947E3005BC0D001E3739 /* Debug */,
+				43D3947F3005BC0D001E3739 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		43D394803005E93F001E3739 /* XCRemoteSwiftPackageReference "adyen-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Adyen/adyen-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.25.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		43D394813005E93F001E3739 /* Adyen */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43D394803005E93F001E3739 /* XCRemoteSwiftPackageReference "adyen-ios" */;
+			productName = Adyen;
+		};
+		43D394833005E93F001E3739 /* AdyenActions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43D394803005E93F001E3739 /* XCRemoteSwiftPackageReference "adyen-ios" */;
+			productName = AdyenActions;
+		};
+		43D394853005E93F001E3739 /* AdyenCard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43D394803005E93F001E3739 /* XCRemoteSwiftPackageReference "adyen-ios" */;
+			productName = AdyenCard;
+		};
+		43D394873005E93F001E3739 /* AdyenDropIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43D394803005E93F001E3739 /* XCRemoteSwiftPackageReference "adyen-ios" */;
+			productName = AdyenDropIn;
+		};
+		43D394893005ED5F001E3739 /* AdyenSession */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43D394803005E93F001E3739 /* XCRemoteSwiftPackageReference "adyen-ios" */;
+			productName = AdyenSession;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 43D3946A3005BC0C001E3739 /* Project object */;
+}

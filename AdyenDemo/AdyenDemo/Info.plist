@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+<key>ADYEN_CLIENT_KEY</key>
+<string>$(ADYEN_CLIENT_KEY)</string>
+<key>ADYEN_ENVIRONMENT</key>
+<string>$(ADYEN_ENVIRONMENT)</string>
+<key>BACKEND_BASE_URL</key>
+<string>$(BACKEND_BASE_URL)</string>
+</dict>
+</plist>
