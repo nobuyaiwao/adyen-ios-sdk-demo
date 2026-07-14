@@ -1,37 +1,32 @@
-import os
 import uuid
 
 import requests
-from dotenv import load_dotenv
 from flask import Flask, jsonify
 
-load_dotenv()
+from config import config
+
 
 app = Flask(__name__)
-
-ADYEN_API_KEY = os.getenv("ADYEN_API_KEY")
-ADYEN_MERCHANT_ACCOUNT = os.getenv("ADYEN_MERCHANT_ACCOUNT")
-
-ADYEN_SESSIONS_URL = "https://checkout-test.adyen.com/v72/sessions"
 
 
 @app.get("/health")
 def health():
-    return jsonify({
-        "status": "ok",
-        "message": "Adyen demo server is running",
-    })
+    return jsonify(
+        {
+            "status": "ok",
+            "message": "Adyen demo server is running",
+            "environment": config.environment,
+        }
+    )
 
 
 @app.post("/sessions")
 def create_session():
-    if not ADYEN_API_KEY or not ADYEN_MERCHANT_ACCOUNT:
-        return jsonify({
-            "error": "Missing ADYEN_API_KEY or ADYEN_MERCHANT_ACCOUNT",
-        }), 500
+
+    sessions_url = f"{config.checkout_base_url}/sessions"
 
     payload = {
-        "merchantAccount": ADYEN_MERCHANT_ACCOUNT,
+        "merchantAccount": config.merchant_account,
         "reference": f"ios-demo-{uuid.uuid4()}",
         "amount": {
             "currency": "JPY",
@@ -39,40 +34,78 @@ def create_session():
         },
         "countryCode": "JP",
         "shopperLocale": "ja-JP",
-        "returnUrl": "adyendemo://payment",
+        "returnUrl": config.return_url,
     }
+    print(f"POST {sessions_url}")
+    print(payload)
 
     try:
         response = requests.post(
-            ADYEN_SESSIONS_URL,
+            sessions_url,
             json=payload,
             headers={
-                "X-API-Key": ADYEN_API_KEY,
+                "X-API-Key": config.api_key,
                 "Content-Type": "application/json",
             },
             timeout=30,
         )
-
-        response.raise_for_status()
-        return jsonify(response.json())
-
-    except requests.HTTPError:
-        return jsonify({
-            "error": "Adyen API returned an error",
-            "statusCode": response.status_code,
-            "adyenResponse": response.json(),
-        }), response.status_code
+        print(f"Status: {response.status_code}")
 
     except requests.RequestException as error:
-        return jsonify({
-            "error": "Could not connect to Adyen",
-            "details": str(error),
-        }), 502
+        app.logger.exception("Could not connect to Adyen")
+
+        return jsonify(
+            {
+                "error": "Could not connect to Adyen",
+                "details": str(error),
+            }
+        ), 502
+
+    try:
+        response_body = response.json()
+    except ValueError:
+        response_body = {
+            "rawResponse": response.text,
+        }
+
+    if not response.ok:
+        app.logger.error(
+            "Adyen API error: status=%s response=%s",
+            response.status_code,
+            response_body,
+        )
+
+        return jsonify(
+            {
+                "error": "Adyen API returned an error",
+                "statusCode": response.status_code,
+                "adyenResponse": response_body,
+            }
+        ), response.status_code
+
+    return jsonify(response_body)
+
+
+def print_startup_configuration() -> None:
+    separator = "=" * 60
+
+    print(separator)
+    print("Adyen iOS SDK demo backend")
+    print(f"Environment: {config.environment.upper()}")
+    print(f"Merchant account: {config.merchant_account}")
+    print(f"Checkout URL: {config.checkout_base_url}")
+    print(separator)
+
+    if config.environment == "live":
+        print("WARNING: THIS SERVER IS USING THE ADYEN LIVE ENVIRONMENT")
+        print(separator)
 
 
 if __name__ == "__main__":
+    print_startup_configuration()
+
     app.run(
-        host="0.0.0.0",
+        host="127.0.0.1",
         port=8080,
         debug=True,
     )
