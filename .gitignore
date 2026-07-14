@@ -4,20 +4,22 @@
 # Python
 server/.venv/
 server/.env
+server/.env.test
+server/.env.live
 server/__pycache__/
 **/__pycache__/
-*.pyc
+*.py[cod]
 
 # Xcode
 DerivedData/
 .build/
 
-# User-specific Xcode settings
-*.xcuserstate
+# Xcode user settings
 xcuserdata/
+*.xcuserstate
 
 # Local configuration
-AdyenDemo/Secrets.xcconfig
+AdyenDemo/Config/Secrets*.xcconfig
 
-# Optional
+# Environment files
 .env
