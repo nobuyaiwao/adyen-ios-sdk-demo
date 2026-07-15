@@ -1,0 +1,4 @@
+#include "Base.xcconfig"
+#include? "Secrets.live.xcconfig"
+
+ADYEN_ENVIRONMENT = live

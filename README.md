@@ -1,33 +1,38 @@
 # Adyen iOS Native SDK Demo
 
-A simple demo project for experimenting with the Adyen iOS Native SDK.
-This repository is intentionally built from scratch instead of using the official Adyen demo application.
+A lightweight demo application for experimenting with the Adyen iOS Native SDK.
 
-The goal of this repository is to provide a lightweight environment for testing Adyen payment methods and SDK features without relying on the official demo app.
+Unlike the official Adyen demo application, this project is intentionally built from scratch to provide a minimal, easy-to-understand example that focuses on the merchant integration.
+
+The project includes both a SwiftUI application and a minimal Flask backend implementing the Sessions API.
 
 > **Status:** Work in progress 🚧
 
+---
+
 ## Features
 
-- ✅ SwiftUI application
+- ✅ SwiftUI
 - ✅ Flask backend
 - ✅ Sessions Flow
 - ✅ Adyen Drop-in
-- ⏳ Card payments
+- ✅ Test / Live environment switching
+- ✅ Build Configurations & Schemes
+- ✅ Card payments
+- ✅ PayPay (Redirect)
 - ⏳ Apple Pay
-- ⏳ PayPay
-- ⏳ Redirect payment methods
 - ⏳ 3D Secure 2
-- ⏳ Partial payments
+- ⏳ Stored Payment Methods
+- ⏳ Partial Payments
 
 ---
 
 ## Requirements
 
 - Xcode 26+
-- iOS Simulator
 - Python 3.11+
-- Adyen Test Account
+- iOS 17+
+- Adyen Test account
 
 ---
 
@@ -37,14 +42,24 @@ The goal of this repository is to provide a lightweight environment for testing 
 adyen-ios-native-sdk-demo
 ├── AdyenDemo
 │   ├── AdyenDemo.xcodeproj
-│   ├── ContentView.swift
-│   ├── PaymentManager.swift
-│   ├── Secrets.xcconfig
+│   ├── AdyenDemo
+│   │   ├── ContentView.swift
+│   │   ├── PaymentManager.swift
+│   │   ├── AppConfiguration.swift
+│   │   ├── Config
+│   │   │   ├── Base.xcconfig
+│   │   │   ├── Test.xcconfig
+│   │   │   ├── Live.xcconfig
+│   │   │   ├── Secrets.test.xcconfig.example
+│   │   │   └── Secrets.live.xcconfig.example
+│   │   └── ...
 │   └── ...
 └── server
+    ├── config.py
     ├── server.py
     ├── requirements.txt
-    └── .env
+    ├── .env.test.example
+    └── .env.live.example
 ```
 
 ---
@@ -62,20 +77,33 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Create `.env`.
+Create configuration files.
+
+```
+.env.test
+.env.live
+```
+
+Example:
 
 ```env
 ADYEN_API_KEY=YOUR_API_KEY
 ADYEN_MERCHANT_ACCOUNT=YOUR_MERCHANT_ACCOUNT
 ```
 
-Run the server.
+Start the Test server.
 
 ```bash
-python server.py
+ADYEN_CONFIG=.env.test python server.py
 ```
 
-The server will start on
+Start the Live server.
+
+```bash
+ADYEN_CONFIG=.env.live python server.py
+```
+
+The backend listens on
 
 ```
 http://127.0.0.1:8080
@@ -88,26 +116,59 @@ http://127.0.0.1:8080
 Copy
 
 ```
-Secrets.xcconfig.example
+Secrets.test.xcconfig.example
 ```
 
 to
 
 ```
-Secrets.xcconfig
+Secrets.test.xcconfig
 ```
 
-and configure
+and
+
+```
+Secrets.live.xcconfig.example
+```
+
+to
+
+```
+Secrets.live.xcconfig
+```
+
+Configure each file with the appropriate Client Key.
+
+Example:
 
 ```text
 ADYEN_CLIENT_KEY=test_xxxxxxxxxxxxxxxxx
 ```
 
+or
+
+```text
+ADYEN_CLIENT_KEY=live_xxxxxxxxxxxxxxxxx
+```
+
+---
+
+## Build Configurations
+
+The project contains dedicated Build Configurations and Schemes for Test and Live environments.
+
+### Schemes
+
+- AdyenDemo-Test
+- AdyenDemo-Live
+
+Each scheme automatically selects the corresponding Client Key and backend configuration.
+
 ---
 
 ## Running
 
-1. Start the Flask server.
+1. Start the backend.
 
 2. Open
 
@@ -115,9 +176,21 @@ ADYEN_CLIENT_KEY=test_xxxxxxxxxxxxxxxxx
 AdyenDemo.xcodeproj
 ```
 
-3. Run the app.
+3. Select either
 
-4. Tap
+```
+AdyenDemo-Test
+```
+
+or
+
+```
+AdyenDemo-Live
+```
+
+4. Press **Run**.
+
+5. Tap
 
 ```
 Start payment
@@ -127,24 +200,23 @@ Start payment
 
 ## Notes
 
-This project intentionally keeps the backend extremely small so that the iOS SDK behavior can be tested independently.
-
-The Adyen API Key is stored only on the backend.
-
-The Client Key is loaded from `Secrets.xcconfig`, which is excluded from Git.
+- The backend only stores the Adyen API Key.
+- Client Keys are stored in local `.xcconfig` files and are excluded from Git.
+- Test and Live environments are isolated using dedicated Build Configurations and Schemes.
+- This project intentionally keeps the backend minimal to focus on the iOS SDK integration.
 
 ---
 
 ## Roadmap
 
-- [x] Sessions API
+- [x] Sessions Flow
 - [x] Drop-in
-- [ ] Card Component
-- [ ] Apple Pay
-- [ ] PayPay
-- [ ] Redirect flow
-- [ ] 3DS2
+- [x] Test / Live switching
+- [x] PayPay Redirect
 - [ ] Return URL handling
+- [ ] Apple Pay
+- [ ] Card Component
+- [ ] 3D Secure 2
 - [ ] Stored Payment Methods
 - [ ] Partial Payments
 - [ ] Logging improvements

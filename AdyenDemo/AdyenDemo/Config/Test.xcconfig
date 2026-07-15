@@ -1,0 +1,4 @@
+#include "Base.xcconfig"
+#include? "Secrets.test.xcconfig"
+
+ADYEN_ENVIRONMENT = test

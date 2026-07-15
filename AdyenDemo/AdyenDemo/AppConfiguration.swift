@@ -9,8 +9,9 @@ enum AppEnvironment: String {
 enum AppConfiguration {
 
     static let environment: AppEnvironment = {
-        let value = requiredString(forKey: "ADYEN_ENVIRONMENT")
-            .lowercased()
+        let value = requiredString(
+            forKey: "ADYEN_ENVIRONMENT"
+        ).lowercased()
 
         guard let environment = AppEnvironment(rawValue: value) else {
             fatalError(
@@ -25,7 +26,25 @@ enum AppConfiguration {
     }()
 
     static let clientKey: String = {
-        requiredString(forKey: "ADYEN_CLIENT_KEY")
+        let value = requiredString(forKey: "ADYEN_CLIENT_KEY")
+
+        switch environment {
+        case .test:
+            guard value.hasPrefix("test_") else {
+                fatalError(
+                    "Test environment requires a test_ Client Key."
+                )
+            }
+
+        case .live:
+            guard value.hasPrefix("live_") else {
+                fatalError(
+                    "Live environment requires a live_ Client Key."
+                )
+            }
+        }
+
+        return value
     }()
 
     static let backendBaseURL: URL = {
@@ -52,7 +71,9 @@ enum AppConfiguration {
         }
     }
 
-    private static func requiredString(forKey key: String) -> String {
+    private static func requiredString(
+        forKey key: String
+    ) -> String {
         guard
             let value = Bundle.main.object(
                 forInfoDictionaryKey: key
@@ -63,7 +84,7 @@ enum AppConfiguration {
             fatalError(
                 """
                 Missing or unresolved configuration value: \(key)
-                Check Info.plist and the active xcconfig file.
+                Check Info.plist and the active xcconfig.
                 """
             )
         }
